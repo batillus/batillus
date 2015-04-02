@@ -9,8 +9,8 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <p>This is the homepage!</p>
-        <h1>bububu</h1>
+         <% String str = (String) request.getAttribute("model"); %>
+         <h1><%=str %></h1> 
         <a href="testjsp">test</a>
     </body>
 </html>

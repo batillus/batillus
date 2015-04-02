@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -42,6 +43,11 @@ public class UserDAOImpl implements UserDAO {
             sessionFactory.getCurrentSession().delete(user);
         }
 
+    }
+    
+    public User getByLogin(String login){
+        return (User) getCurrentSession().createCriteria(User.class)
+                .add(Restrictions.eq("login", login)).uniqueResult();
     }
 
 		

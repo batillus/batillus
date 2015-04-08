@@ -1,0 +1,71 @@
+package NaRaene.NaRaene.domain;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+	@Entity
+	@Table(name = "player")
+	public class Player {
+	
+
+	@Id
+	 @GeneratedValue(strategy = GenerationType.AUTO)
+	 @Column(name="id", columnDefinition = "int(11)")
+	    private long playerId;
+	 
+	 @Column(name = "player_name", columnDefinition = "char(32)")
+	 private String playerName;
+	 
+	 @Column(name = "type", columnDefinition = "char(100)")
+	 private String type;
+
+	 @Column(name="user_id", columnDefinition = "int(11)")
+	  private long userId;
+
+		 public Player(){
+			 
+		 }
+		 
+		 public Player(String playerName, String type, long userId){
+			 this.playerName = playerName;
+			 this.type = type;
+			 this.userId = userId;
+		 }
+		 
+		 public long getPlayerId() {
+				return playerId;
+			}
+
+			public void setPlayerId(long playerId) {
+				this.playerId = playerId;
+			}
+
+			public String getPlayerName() {
+				return playerName;
+			}
+
+			public void setPlayerName(String playerName) {
+				this.playerName = playerName;
+			}
+
+			public String getType() {
+				return type;
+			}
+
+			public void setType(String type) {
+				this.type = type;
+			}
+
+			public long getUserId() {
+				return userId;
+			}
+
+			public void setUserId(long userId) {
+				this.userId = userId;
+			}
+	}

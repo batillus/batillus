@@ -26,8 +26,7 @@ public class UserRegController {
 	@RequestMapping(value="userreg")
 	public ModelAndView test(HttpServletRequest request, HttpServletResponse response) throws IOException, DBException{
 		ModelAndView model = new ModelAndView();
-		DatabaseCleaner cleaner = new DatabaseCleaner();
-		
+				
 		String test = "test";
 		if(checkForms(request)){
 			test = "true";

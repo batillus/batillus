@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import NaRaene.NaRaene.database.dao.UserDAO;
+import NaRaene.NaRaene.domain.User;
 
 @Controller
 public class LoginController {
@@ -37,8 +38,10 @@ public class LoginController {
 			try{
 		 if(checkLogin(login, password)){
 			str = "huge success";
-			String userName = userDao.getByLogin(login).getFirstName(); //hz
-			session.setAttribute("user", userName);                     //hz
+			User user = userDao.getByLogin(login);
+			session.setAttribute("user", user);
+			//String userName = userDao.getByLogin(login).getFirstName(); //hz
+			//session.setAttribute("user", userName);                     //hz
 		  }
 			} catch (NullPointerException e) {
 				str = "fail";

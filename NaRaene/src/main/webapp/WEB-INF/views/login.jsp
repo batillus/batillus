@@ -11,7 +11,7 @@
 <hr />
 <div align="center">
 <% String str = (String) request.getAttribute("model"); 
-if(str.equals("fail")/* || str.equals("sasay")*/) {%>
+if(str.equals("fail")) {%>
     <form method="post" action="login">
         Login:<input type="text" name="userlogin" /><br/>
         <br/>
@@ -21,15 +21,11 @@ if(str.equals("fail")/* || str.equals("sasay")*/) {%>
         <br/>
        </form>
       <%}%>
-       <h1><%=str %></h1>
-      <br/>
-      <% String gg = ""; 
-      if(session.getAttribute("user") != null){
-    	  gg = "welcome " +(String) session.getAttribute("user");
-      } 
-    	 %>
-    	 
-    	 <h1><%=gg %></h1>
+       <br/>
+      <% if(session.getAttribute("user") != null){
+    	  String redirectURL = "userpage";
+    	  response.sendRedirect(redirectURL);
+      } %>
       
      
 </div>

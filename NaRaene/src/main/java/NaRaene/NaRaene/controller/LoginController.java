@@ -41,7 +41,7 @@ public class LoginController {
 			session.setAttribute("user", userName);                     //hz
 		  }
 			} catch (NullPointerException e) {
-				str = "sasay";
+				str = "fail";
 			}
 		}	
 		model.setViewName("login");

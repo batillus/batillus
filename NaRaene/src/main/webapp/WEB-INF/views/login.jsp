@@ -11,7 +11,7 @@
 <hr />
 <div align="center">
 <% String str = (String) request.getAttribute("model"); 
-if(str.equals("fail") || str.equals("sasay")) {%>
+if(str.equals("fail")/* || str.equals("sasay")*/) {%>
     <form method="post" action="login">
         Login:<input type="text" name="userlogin" /><br/>
         <br/>

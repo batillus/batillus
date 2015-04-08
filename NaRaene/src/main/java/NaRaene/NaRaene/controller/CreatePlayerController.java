@@ -18,6 +18,10 @@ import NaRaene.NaRaene.domain.User;
 
 @Controller
 public class CreatePlayerController {
+	
+	private static final int DEFAULT_HP = 100;
+	private static final int DEFAULT_STR = 10;
+	
 	@Autowired
 	private PlayerDAO playerDAO;
 	
@@ -27,11 +31,14 @@ public class CreatePlayerController {
 		
 		String test = "test";
 		if(checkForms(request)){
-			test = "true";
 			createPlayerInDB(request);
+			test = "true";
 		} else {
 			test = "false";
 		}
+		
+		model.setViewName("createplayer");
+		model.addObject("model", test);
 		
 		return model;
 	}
@@ -63,7 +70,7 @@ public class CreatePlayerController {
 		String type = (String) request.getParameter("type");
 		long userId = user.getUserId();
 		
-		Player player = new Player(name, type, userId);
+		Player player = new Player(name, type, userId, DEFAULT_STR, DEFAULT_HP);
 		
 		try{
 		playerDAO.addPlayer(player);

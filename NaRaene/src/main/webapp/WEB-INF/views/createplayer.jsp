@@ -19,5 +19,12 @@
     </form>
 </div>
 
+	<%
+		String str = (String) request.getAttribute("model");  //esli novij igrok zaregalsa to redirekt
+		if (str.equals("true")) {
+			String redirectURL = "userpage";
+			response.sendRedirect(redirectURL);
+		}
+	%>
 </body>
 </html>

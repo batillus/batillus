@@ -10,7 +10,6 @@
 <body>
 <jsp:include page="header.jsp" />
 <h1>hi</h1>
-<a href="home">Home</a>
 <a href="login">Login</a>
 <a href="userreg">Registration</a>
 

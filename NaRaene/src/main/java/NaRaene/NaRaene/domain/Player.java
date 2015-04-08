@@ -16,7 +16,7 @@ import javax.persistence.Transient;
 	@Id
 	 @GeneratedValue(strategy = GenerationType.AUTO)
 	 @Column(name="id", columnDefinition = "int(11)")
-	    private long playerId;
+	 private long playerId;
 	 
 	 @Column(name = "player_name", columnDefinition = "char(32)")
 	 private String playerName;
@@ -26,15 +26,23 @@ import javax.persistence.Transient;
 
 	 @Column(name="user_id", columnDefinition = "int(11)")
 	  private long userId;
+	 
+	 @Column(name="strength", columnDefinition = "int(11)")
+	  private int strength;
+	 
+	 @Column(name="hp", columnDefinition = "int(11)")
+	  private int hp;
 
 		 public Player(){
 			 
 		 }
 		 
-		 public Player(String playerName, String type, long userId){
+		 public Player(String playerName, String type, long userId, int strength, int hp){
 			 this.playerName = playerName;
 			 this.type = type;
 			 this.userId = userId;
+			 this.strength = strength;
+			 this.hp = hp;
 		 }
 		 
 		 public long getPlayerId() {

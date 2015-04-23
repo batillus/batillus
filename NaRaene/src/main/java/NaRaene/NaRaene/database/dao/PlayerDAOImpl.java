@@ -38,14 +38,16 @@ public class PlayerDAOImpl implements PlayerDAO {
 		
 	}
 
-	public Player getById(Long id) {
-		 return (Player) getCurrentSession().get(User.class, id);
+	public Player getById(long id) {
+		 return (Player) getCurrentSession().get(Player.class, id);
 	}
 
 	public Player getByName(String name) {
 		 return (Player) getCurrentSession().createCriteria(User.class)
 	                .add(Restrictions.eq("player_name", name)).uniqueResult();
 	}
+
+	
     
    
 

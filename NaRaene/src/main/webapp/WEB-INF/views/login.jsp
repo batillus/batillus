@@ -10,8 +10,9 @@
 <div align="right"><a href="../">Back to home</a></div>
 <hr />
 <div align="center">
-<% String str = (String) request.getAttribute("model"); 
-if(str.equals("fail")) {%>
+<% String check = (String) request.getAttribute("model"); 
+
+if(check.equals("false")) {%>
     <form method="post" action="login">
         Login:<input type="text" name="userlogin" /><br/>
         <br/>

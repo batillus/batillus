@@ -13,6 +13,22 @@ import javax.persistence.Transient;
 	public class Player {
 	
 
+	public int getStrength() {
+			return strength;
+		}
+
+		public void setStrength(int strength) {
+			this.strength = strength;
+		}
+
+		public int getHp() {
+			return hp;
+		}
+
+		public void setHp(int hp) {
+			this.hp = hp;
+		}
+
 	@Id
 	 @GeneratedValue(strategy = GenerationType.AUTO)
 	 @Column(name="id", columnDefinition = "int(11)")

@@ -26,7 +26,7 @@ public class LoginController {
 		
 		HttpSession session = request.getSession(true);
 		
-		String str = "fail";
+		String check = "false";
 		
 		String login = (String) request.getParameter("userlogin");
 		String password = (String) request.getParameter("password");
@@ -37,18 +37,18 @@ public class LoginController {
 			
 			try{
 		 if(checkLogin(login, password)){
-			str = "huge success";
+			check = "true";
 			User user = userDao.getByLogin(login);
 			session.setAttribute("user", user);
 			//String userName = userDao.getByLogin(login).getFirstName(); //hz
 			//session.setAttribute("user", userName);                     //hz
 		  }
 			} catch (NullPointerException e) {
-				str = "fail";
+				check = "false";
 			}
 		}	
 		model.setViewName("login");
-		model.addObject("model", str);
+		model.addObject("model", check);
 		
 				
 		

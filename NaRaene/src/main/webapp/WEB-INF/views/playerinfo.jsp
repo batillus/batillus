@@ -1,19 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import="NaRaene.NaRaene.domain.Player" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="resources/style.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>NaRaene</title>
+<title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="header.jsp" />
-<a href="login">Login</a>
-<a href="userreg">Registration</a>
+<% Player player = (Player)request.getAttribute("model");
+ String playerName = player.getPlayerName();
+ %>
 
-<div align = "right">
-<a href="dbcleaner">Clean all db records</a>
+<div align="center">
+<h1><%=playerName%></h1>
 </div>
 </body>
 </html>

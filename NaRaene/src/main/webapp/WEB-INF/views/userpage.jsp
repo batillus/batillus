@@ -25,13 +25,18 @@ you have <%=quantity %> players
 <% if(quantity > 0) {
 for (int i=0;i<list.size();i++){
 	String playerName = list.get(i).getPlayerName(); %>
+<a href="playerinfo?id=<%=list.get(i).getPlayerId()%>"><%=playerName %></a>
+<br/>
 	
-	<%=playerName %>
 <%}
 	}%>
 
 <br/>
 <a href="createplayer">create new player</a>
+<br/>
+
+
+
 
 </body>
 </html>

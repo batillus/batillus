@@ -12,7 +12,7 @@ public interface UserDAO {
 
 	    public void removeUser(long id);
 	    
-	    public User getById(Long id);
+	    public User getById(long id);
 	    
 	    public User getByLogin(String login);
 	}

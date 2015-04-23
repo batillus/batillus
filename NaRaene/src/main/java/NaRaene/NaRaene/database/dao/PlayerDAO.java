@@ -13,7 +13,7 @@ public interface PlayerDAO {
 
 	    public void removePlayer(long id);
 	    
-	    public Player getById(Long id);
+	    public Player getById(long id);
 	    
 	    public Player getByName(String name);
 	}
